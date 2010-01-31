@@ -25,6 +25,10 @@ int pd_main();			//cool
 	pd_main(5, argv);			//start up pd lol
     // Override point for customization after application launch
     [window makeKeyAndVisible];
+	
+	//and again
+	
+	//adding a comment to test xcode scm settings again...
 }
 
 - (void)dealloc {
