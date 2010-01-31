@@ -84,8 +84,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 286499260;
-			PBXWorkspaceStateSaveDate = 286499260;
+			PBXPerProjectTemplateStateSaveDate = 286608421;
+			PBXWorkspaceStateSaveDate = 286608421;
 		};
 		perUserProjectItems = {
 			8A5949E2110DDC6B002538C9 = 8A5949E2110DDC6B002538C9 /* PBXTextBookmark */;
@@ -93,8 +93,8 @@
 			8AA3BBD011139B100005A724 = 8AA3BBD011139B100005A724 /* PBXBookmark */;
 			8AA3BBD111139B100005A724 = 8AA3BBD111139B100005A724 /* PBXTextBookmark */;
 			8AA3BBD811139BEE0005A724 = 8AA3BBD811139BEE0005A724 /* PBXTextBookmark */;
-			8AF2199E1113A1C400B85EDA /* PBXBookmark */ = 8AF2199E1113A1C400B85EDA /* PBXBookmark */;
-			8AF2199F1113A1C400B85EDA /* PBXTextBookmark */ = 8AF2199F1113A1C400B85EDA /* PBXTextBookmark */;
+			8AF2199E1113A1C400B85EDA = 8AF2199E1113A1C400B85EDA /* PBXBookmark */;
+			8AF2199F1113A1C400B85EDA = 8AF2199F1113A1C400B85EDA /* PBXTextBookmark */;
 		};
 		sourceControlManager = 8A035B47110A9F7B005483CF /* Source Control */;
 		userBuildSettings = {
@@ -168,7 +168,7 @@
 		isSCMEnabled = 0;
 		scmConfiguration = {
 			repositoryNamesForRoots = {
-				"" = "";
+				.. = svn;
 			};
 		};
 	};
