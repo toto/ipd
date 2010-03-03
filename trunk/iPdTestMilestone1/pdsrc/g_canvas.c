@@ -343,7 +343,16 @@ void glist_init(t_glist *x)
 t_canvas *canvas_new(void *dummy, t_symbol *sel, int argc, t_atom *argv)
 {
     t_canvas *x = (t_canvas *)pd_new(canvas_class);
-    t_canvas *owner = canvas_getcurrent();
+    t_canvas *owner = canvas_getcurrent();									// check after!!!
+	
+	if (!owner)
+	{
+		printf("Adding root canvas pointer to ipd\n");
+		//add x to our ipdadapter
+//		printf("our root canvas has %d inlets and %d outlets.\n", 
+//			   obj_ninlets(&x->gl_obj), obj_noutlets(&x->gl_obj));
+		objc_msgSend(ipd_ptr, sel_getUid("registerRootCanvasWithPtr:"), x);
+	}
     t_symbol *s = &s_;
     int vis = 0, width = GLIST_DEFCANVASWIDTH, height = GLIST_DEFCANVASHEIGHT;
     int xloc = 0, yloc = GLIST_DEFCANVASYLOC;
@@ -423,6 +432,7 @@ t_canvas *canvas_new(void *dummy, t_symbol *sel, int argc, t_atom *argv)
     x->gl_edit = !strncmp(x->gl_name->s_name, "Untitled", 8);
     x->gl_font = sys_nearestfontsize(font);
     pd_pushsym(&x->gl_pd);
+	
     return(x);
 }
 
@@ -1482,7 +1492,7 @@ void g_editor_setup(void);
 void g_readwrite_setup(void);
 extern void canvas_properties(t_gobj *z);
 
-void g_canvas_setup(void)
+void g_canvas_setup(void)	//02/25/2010 the inlets must be attached at some point along here ...
 {
         /* we prevent the user from typing "canvas" in an object box
         by sending 0 for a creator function. */

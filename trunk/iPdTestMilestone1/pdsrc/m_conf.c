@@ -30,6 +30,10 @@ void m_pd_setup(void);
 void x_acoustics_setup(void);
 void x_interface_setup(void);
 void x_connective_setup(void);
+
+//edited for ipd.... load ipd internals
+void ipd_internals_setup(void);
+
 void x_time_setup(void);
 void x_arithmetic_setup(void);
 void x_midi_setup(void);
@@ -76,7 +80,7 @@ void conf_init(void)
     m_pd_setup();
     x_acoustics_setup();
     x_interface_setup();
-    x_connective_setup();
+    x_connective_setup();	
     x_time_setup();
     x_arithmetic_setup();
     x_midi_setup();

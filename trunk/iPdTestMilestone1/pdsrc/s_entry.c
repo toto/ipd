@@ -1,7 +1,7 @@
 /* In MSW, this is all there is to pd; the rest sits in a "pdlib" dll so
 that externs can link back to functions defined in pd. */
 
-int sys_main(int argc, char **argv);
+int sys_main(int argc, char **argv, void *ptr);
 
 /* 
  * gcc does not support the __try stuff, only MSVC.  Also, MinGW allows you to
@@ -27,9 +27,9 @@ int WINAPI WinMain(HINSTANCE hInstance,
 }
 
 #else /* not _MSC_VER ... */
-int pd_main(int argc, char **argv)
+int pd_main(int argc, char **argv, void *ptr)
 {
-    return (sys_main(argc, argv));
+    return (sys_main(argc, argv, ptr));
 	printf("Running...\n");
 	return 1;
 }

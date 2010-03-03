@@ -150,7 +150,7 @@ struct _glist
     struct _glist *gl_owner;    /* parent glist, supercanvas, or 0 if none */
     int gl_pixwidth;            /* width in pixels (on parent, if a graph) */
     int gl_pixheight;
-    t_float gl_x1;                /* bounding rectangle in our own coordinates */
+    t_float gl_x1;              /* bounding rectangle in our own coordinates */
     t_float gl_y1;
     t_float gl_x2;
     t_float gl_y2;
@@ -616,3 +616,9 @@ EXTERN t_symbol *iemgui_dollar2raute(t_symbol *s);
 #if defined(_LANGUAGE_C_PLUS_PLUS) || defined(__cplusplus)
 }
 #endif
+
+
+/* iPd 02/13/2010 */
+
+void register_canvas_pointer(t_canvas *x);
+

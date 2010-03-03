@@ -8,6 +8,7 @@
 
 #include <string.h>
 #include <stdio.h>
+
 extern t_pd *newest;
 
 /* -------------------------- int ------------------------------ */
@@ -1503,7 +1504,7 @@ static void value_setup(void)
 
 /* -------------- overall setup routine for this file ----------------- */
 
-void x_connective_setup(void)
+void x_connective_setup(void)			//put extra internals here!!!
 {
     pdint_setup();
     pdfloat_setup();

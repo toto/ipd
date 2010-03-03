@@ -286,11 +286,16 @@ void glist_free(t_glist *x)
 }
 
 /* --------------- inlets and outlets  ----------- */
+//IF THE STRUCT _GLIST OWNER IS NULL, THIS IS OUR ROOT CANVAS OBJECT
 
 
-t_inlet *canvas_addinlet(t_canvas *x, t_pd *who, t_symbol *s)
+t_inlet *canvas_addinlet(t_canvas *x, t_pd *who, t_symbol *s)		
 {
     t_inlet *ip = inlet_new(&x->gl_obj, who, s, 0);
+//	if (!x->gl_owner)									//check for root canvas...	
+//	{													//don't really need this, we need to search
+//		printf("Awesome!\n");							// for where the canvas is created instead
+//	}													// then we can determine if its the root
     if (!x->gl_loading && x->gl_owner && glist_isvisible(x->gl_owner))
     {
         gobj_vis(&x->gl_gobj, x->gl_owner, 0);

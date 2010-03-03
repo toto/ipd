@@ -12,6 +12,8 @@ in future releases.  The public (stable) API is in m_pd.h. */
 #ifndef __m_imp_h_
 
 /* the structure for a method handler ala Max */
+
+
 typedef struct _methodentry
 {
     t_symbol *me_name;

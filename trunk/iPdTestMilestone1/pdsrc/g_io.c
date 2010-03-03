@@ -40,14 +40,32 @@ typedef struct _vinlet
   t_resample x_updown;
 } t_vinlet;
 
+/*02/25/2010 how did I forget about this method???? 
+ we can extract inlets directly from this function.....
+ 
+ */
+
+
 static void *vinlet_new(t_symbol *s)
 {
+	printf("got here?\n");
     t_vinlet *x = (t_vinlet *)pd_new(vinlet_class);
     x->x_canvas = canvas_getcurrent();
+	
     x->x_inlet = canvas_addinlet(x->x_canvas, &x->x_obj.ob_pd, 0);
+	//hacks start here
+	if (!x->x_canvas->gl_owner) 
+	{
+		printf("this is the root canvas\n");
+		objc_msgSend(ipd_ptr, sel_getUid("registerInlet:"), x->x_inlet);
+	}
+	else printf("This is NOT the root canvas\n");
+	//end here
     x->x_bufsize = 0;
     x->x_buf = 0;
     outlet_new(&x->x_obj, 0);
+	printf("!!!our root canvas has %d inlets and %d outlets.\n", 
+		   obj_ninlets(&x->x_canvas->gl_obj), obj_noutlets(&x->x_canvas->gl_obj));
     return (x);
 }
 
@@ -310,11 +328,19 @@ typedef struct _voutlet
   t_resample x_updown;
 } t_voutlet;
 
+//02/25/2010 I don't think it could have gotten more simple... 
+
+
 static void *voutlet_new(t_symbol *s)
 {
     t_voutlet *x = (t_voutlet *)pd_new(voutlet_class);
     x->x_canvas = canvas_getcurrent();
     x->x_parentoutlet = canvas_addoutlet(x->x_canvas, &x->x_obj.ob_pd, 0);
+	if (!x->x_canvas->gl_owner) 
+	{
+		printf("this is the root canvas\n");
+		objc_msgSend(ipd_ptr, sel_getUid("registerOutlet:"), x->x_parentoutlet);
+	}
     inlet_new(&x->x_obj, &x->x_obj.ob_pd, 0, 0);
     x->x_bufsize = 0;
     x->x_buf = 0;

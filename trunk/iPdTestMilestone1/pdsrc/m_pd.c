@@ -6,6 +6,7 @@
 #include "m_pd.h"
 #include "m_imp.h"
 
+void *ipd_ptr = NULL;
     /* FIXME no out-of-memory testing yet! */
 
 t_pd *pd_new(t_class *c)
@@ -302,5 +303,12 @@ void pd_init(void)
     conf_init();			//configuration
     glob_init();			//global init
     garray_init();
+}
+
+/* ipd goodness */
+
+void set_ipd_pointer(void *ptr) 
+{
+	ipd_ptr = ptr;
 }
 

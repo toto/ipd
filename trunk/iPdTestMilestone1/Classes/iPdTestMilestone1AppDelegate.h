@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class mainViewController;
+
 @interface iPdTestMilestone1AppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+	NSMutableSet *inlet_list;
+	mainViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet mainViewController *viewController;
 
 @end
 

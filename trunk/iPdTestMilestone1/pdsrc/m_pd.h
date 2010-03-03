@@ -4,14 +4,19 @@
 
 #ifndef __m_pd_h_
 
+#include <objc/runtime.h> //something tells me this is wrong... putting 
+/*		only putting this temporarily to ensure C/objC communication... */
+
+void set_ipd_pointer(void *ptr);
+
 #if defined(_LANGUAGE_C_PLUS_PLUS) || defined(__cplusplus)
 extern "C" {
 #endif
 
 #define PD_MAJOR_VERSION 0
-#define PD_MINOR_VERSION 42
-#define PD_BUGFIX_VERSION 5
-#define PD_TEST_VERSION ""
+#define PD_MINOR_VERSION 43
+#define PD_BUGFIX_VERSION 0
+#define PD_TEST_VERSION "hcs0"
 
 /* old name for "MSW" flag -- we have to take it for the sake of many old
 "nmakefiles" for externs, which will define NT and not MSW */
@@ -46,7 +51,7 @@ extern "C" {
 #define EXTERN_STRUCT extern struct
 #endif
 
-
+	
 #if !defined(_SIZE_T) && !defined(_SIZE_T_)
 #include <stddef.h>     /* just for size_t -- how lame! */
 #endif
@@ -147,7 +152,7 @@ EXTERN_STRUCT _outlet;
 #define t_outlet struct _outlet
 
 EXTERN_STRUCT _inlet;
-#define t_inlet struct _inlet
+#define t_inlet struct _inlet			//the linked list of inlets/outlets is what we want!
 
 EXTERN_STRUCT _binbuf;
 #define t_binbuf struct _binbuf
@@ -225,6 +230,10 @@ EXTERN t_symbol s__X;
 EXTERN t_symbol s_x;
 EXTERN t_symbol s_y;
 EXTERN t_symbol s_;
+	
+	//02/14/2010  this is just a test.. trying to make ipd_ptr global variable
+	
+	EXTERN void *ipd_ptr;
 
 /* --------- prototypes from the central message system ----------- */
 EXTERN void pd_typedmess(t_pd *x, t_symbol *s, int argc, t_atom *argv);

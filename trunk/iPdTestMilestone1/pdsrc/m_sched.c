@@ -408,7 +408,7 @@ static void m_pollingscheduler( void)
     sys_time_per_dsp_tick = (TIMEUNITPERSEC) *
         ((double)sys_schedblocksize) / sys_dacsr;
 
-#ifdef THREAD_LOCKING
+#ifdef THREAD_LOCKING				
         sys_lock();
 #endif
 

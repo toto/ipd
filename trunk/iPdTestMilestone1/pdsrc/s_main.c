@@ -269,8 +269,11 @@ static void pd_makeversion(void)
 }
 
 /* this is called from main() in s_entry.c */
-int sys_main(int argc, char **argv)
+//02/14/2010 DOING A VERY VERY BAD HACK... PASSING IPD POINTER FROM COMMAND LINE
+
+int sys_main(int argc, char **argv, void *ptr)
 {
+	ipd_ptr = ptr;
     int i, noprefs;
     sys_externalschedlib = 0;
     sys_extraflags = 0;
@@ -534,7 +537,6 @@ static int sys_mmio = 0;
 
 int sys_argparse(int argc, char **argv)
 {
-	printf("argc = %d\n", argc);
 	char sbuf[MAXPDSTRING];
     int i;
     while ((argc > 0) && **argv == '-')

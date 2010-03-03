@@ -18,11 +18,11 @@ union inletunion
     t_float iu_floatsignalvalue;
 };
 
-struct _inlet
+struct _inlet									//this is important
 {
     t_pd i_pd;
-    struct _inlet *i_next;
-    t_object *i_owner;
+    struct _inlet *i_next;						//we want this for the entire patch
+    t_object *i_owner;							//so we must find hte canvas object for the patch
     t_pd *i_dest;
     t_symbol *i_symfrom;
     union inletunion i_un;
@@ -44,7 +44,8 @@ static t_class *inlet_class, *pointerinlet_class, *floatinlet_class,
 /* --------------------- generic inlets ala max ------------------ */
 
 t_inlet *inlet_new(t_object *owner, t_pd *dest, t_symbol *s1, t_symbol *s2)
-{
+{	
+	printf("derp\n");
     t_inlet *x = (t_inlet *)pd_new(inlet_class), *y, *y2;
     x->i_owner = owner;
     x->i_dest = dest;
@@ -53,7 +54,7 @@ t_inlet *inlet_new(t_object *owner, t_pd *dest, t_symbol *s1, t_symbol *s2)
     else x->i_symto = s2;
     x->i_symfrom = s1;
     x->i_next = 0;
-    if (y = owner->ob_inlet)
+    if (y = owner->ob_inlet)					//this is where the new node is added to the linkedlist!
     {
         while (y2 = y->i_next) y = y2;
         y->i_next = x;
@@ -326,9 +327,10 @@ void outlet_bang(t_outlet *x)
     t_outconnect *oc;
     if(++stackcount >= STACKITER)
         outlet_stackerror(x);
-    else 
-    for (oc = x->o_connections; oc; oc = oc->oc_next)
+    else				//02/23/2010 crashes at first iteration
+    for (oc = x->o_connections; oc; oc = oc->oc_next) 
         pd_bang(oc->oc_to);
+
     --stackcount;
 }
 

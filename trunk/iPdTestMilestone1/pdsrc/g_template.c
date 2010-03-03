@@ -567,7 +567,7 @@ instructions for the template.  The template doesn't go away when the
 "struct" is deleted, so that you can replace it with
 another one to add new fields, for example. */
 
-static void *gtemplate_donew(t_symbol *sym, int argc, t_atom *argv)
+static void *gtemplate_donew(t_symbol *sym, int argc, t_atom *argv) 
 {
     t_gtemplate *x = (t_gtemplate *)pd_new(gtemplate_class);
     t_template *t = template_findbyname(sym);
