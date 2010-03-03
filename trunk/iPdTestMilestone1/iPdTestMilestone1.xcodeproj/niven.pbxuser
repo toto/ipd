@@ -125,6 +125,22 @@
 					PBXFindDataSource_LocationID,
 				);
 			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXSymbolsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXSymbolsDataSource_SymbolNameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					16,
+					200,
+					50,
+					409,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXSymbolsDataSource_SymbolTypeIconID,
+					PBXSymbolsDataSource_SymbolNameID,
+					PBXSymbolsDataSource_SymbolTypeID,
+					PBXSymbolsDataSource_ReferenceNameID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
@@ -164,6 +180,12 @@
 			8A09DBFE113E386A000EF7F9 /* PBXTextBookmark */ = 8A09DBFE113E386A000EF7F9 /* PBXTextBookmark */;
 			8A09DBFF113E386A000EF7F9 /* PBXBookmark */ = 8A09DBFF113E386A000EF7F9 /* PBXBookmark */;
 			8A09DC00113E386A000EF7F9 /* PBXTextBookmark */ = 8A09DC00113E386A000EF7F9 /* PBXTextBookmark */;
+			8A09DC0E113E38A4000EF7F9 /* PBXTextBookmark */ = 8A09DC0E113E38A4000EF7F9 /* PBXTextBookmark */;
+			8A09DC10113E38A4000EF7F9 /* PBXTextBookmark */ = 8A09DC10113E38A4000EF7F9 /* PBXTextBookmark */;
+			8A09DC12113E38A4000EF7F9 /* PBXBookmark */ = 8A09DC12113E38A4000EF7F9 /* PBXBookmark */;
+			8A09DC13113E38A4000EF7F9 /* PBXTextBookmark */ = 8A09DC13113E38A4000EF7F9 /* PBXTextBookmark */;
+			8A09DC14113E38A4000EF7F9 /* PBXTextBookmark */ = 8A09DC14113E38A4000EF7F9 /* PBXTextBookmark */;
+			8A09DC15113E38A4000EF7F9 /* PBXTextBookmark */ = 8A09DC15113E38A4000EF7F9 /* PBXTextBookmark */;
 			8A5949E2110DDC6B002538C9 = 8A5949E2110DDC6B002538C9 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 8A035B47110A9F7B005483CF /* Source Control */;
@@ -334,6 +356,11 @@
 		name = ipd_internals.c;
 		path = /Users/niven/iPd/ipd/iPdTestMilestone1/Classes/ipd_internals.c;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {647, 1430}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 820}";
+		};
 	};
 	8A09DBFD113E386A000EF7F9 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -365,9 +392,15 @@
 	};
 	8A09DC01113E386A000EF7F9 /* niven.pbxuser */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = text;
 		name = niven.pbxuser;
 		path = /Users/niven/iPd/ipd/iPdTestMilestone1/iPdTestMilestone1.xcodeproj/niven.pbxuser;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {647, 8333}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1297}";
+		};
 	};
 	8A09DC0B113E386A000EF7F9 /* niven.pbxuser */ = {
 		isa = PBXFileReference;
@@ -375,6 +408,72 @@
 		name = niven.pbxuser;
 		path = /Users/niven/iPd/ipd/iPdTestMilestone1/iPdTestMilestone1.xcodeproj/niven.pbxuser;
 		sourceTree = "<absolute>";
+	};
+	8A09DC0E113E38A4000EF7F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8A09DC0F113E38A4000EF7F9 /* niven.pbxuser */;
+		name = "niven.pbxuser: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1297;
+		vrLoc = 0;
+	};
+	8A09DC0F113E38A4000EF7F9 /* niven.pbxuser */ = {
+		isa = PBXFileReference;
+		name = niven.pbxuser;
+		path = /Users/niven/iPd/ipd/iPdTestMilestone1/iPdTestMilestone1.xcodeproj/niven.pbxuser;
+		sourceTree = "<absolute>";
+	};
+	8A09DC10113E38A4000EF7F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8A09DC11113E38A4000EF7F9 /* project.pbxproj */;
+		name = "project.pbxproj: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 4439;
+		vrLoc = 0;
+	};
+	8A09DC11113E38A4000EF7F9 /* project.pbxproj */ = {
+		isa = PBXFileReference;
+		name = project.pbxproj;
+		path = /Users/niven/iPd/ipd/iPdTestMilestone1/iPdTestMilestone1.xcodeproj/project.pbxproj;
+		sourceTree = "<absolute>";
+	};
+	8A09DC12113E38A4000EF7F9 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 8AA2AB47111628C100F129F7 /* Icon.png */;
+	};
+	8A09DC13113E38A4000EF7F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8A046347111E98F800A3BB1A /* inlet_test.pd */;
+		name = "inlet_test.pd: 9";
+		rLen = 0;
+		rLoc = 198;
+		rType = 0;
+		vrLen = 198;
+		vrLoc = 0;
+	};
+	8A09DC14113E38A4000EF7F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8A09DBFC113E386A000EF7F9 /* ipd_internals.c */;
+		name = "ipd_internals.c: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 820;
+		vrLoc = 0;
+	};
+	8A09DC15113E38A4000EF7F9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8A77B3B011289B1100BFDB01 /* mainViewController.h */;
+		name = "mainViewController.h: 13";
+		rLen = 0;
+		rLoc = 225;
+		rType = 0;
+		vrLen = 234;
+		vrLoc = 0;
 	};
 	8A0FBB8B11166C0A00800872 /* iPdAdapter.h */ = {
 		uiCtxt = {

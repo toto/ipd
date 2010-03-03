@@ -86,7 +86,6 @@
 		8AA3BC7B1113A1640005A724 /* x_net.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3BC701113A1640005A724 /* x_net.c */; };
 		8AA3BC7C1113A1640005A724 /* x_qlist.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3BC711113A1640005A724 /* x_qlist.c */; };
 		8AA3BC7D1113A1640005A724 /* x_time.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3BC721113A1640005A724 /* x_time.c */; };
-		AFB9C7B511332E9000F1555B /* ipd_internals.c in Sources */ = {isa = PBXBuildFile; fileRef = AFB9C7B411332E9000F1555B /* ipd_internals.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,7 +179,6 @@
 		8AA3BC711113A1640005A724 /* x_qlist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = x_qlist.c; path = pdsrc/x_qlist.c; sourceTree = "<group>"; };
 		8AA3BC721113A1640005A724 /* x_time.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = x_time.c; path = pdsrc/x_time.c; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iPdTestMilestone1-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPdTestMilestone1-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		AFB9C7B411332E9000F1555B /* ipd_internals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ipd_internals.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,7 +344,6 @@
 		AFB9C7B311332E6100F1555B /* iPdUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				AFB9C7B411332E9000F1555B /* ipd_internals.c */,
 			);
 			name = iPdUtilities;
 			sourceTree = "<group>";
@@ -479,7 +476,6 @@
 				8AA3BC7D1113A1640005A724 /* x_time.c in Sources */,
 				8A0FBB8D11166C0A00800872 /* iPdAdapter.m in Sources */,
 				8A77B3B311289B1100BFDB01 /* mainViewController.m in Sources */,
-				AFB9C7B511332E9000F1555B /* ipd_internals.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,8 @@
+#N canvas 622 398 450 300 10;
+#X obj 108 65 ipdinlet;
+#X obj 164 65 ipdinlet;
+#X obj 116 153 print;
+#X msg 110 127 WAKKA WAKKA WAKKA;
+#X obj 110 97 loadbang;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
