@@ -17,6 +17,7 @@
 		8A0FBB8D11166C0A00800872 /* iPdAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FBB8C11166C0A00800872 /* iPdAdapter.m */; };
 		8A4320B5110FDCDD00B66E5B /* metrobang.pd in Resources */ = {isa = PBXBuildFile; fileRef = 8A4320B4110FDCDD00B66E5B /* metrobang.pd */; };
 		8A599A11111FB7080022BEF0 /* inouttest.pd in Resources */ = {isa = PBXBuildFile; fileRef = 8A599A10111FB7080022BEF0 /* inouttest.pd */; };
+		8A688C03113F52CC000B5DF4 /* AccelerometerFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A688C02113F52CC000B5DF4 /* AccelerometerFilter.m */; };
 		8A6D364D110FC13500EA5681 /* helloworld.pd in Resources */ = {isa = PBXBuildFile; fileRef = 8A6D364C110FC13500EA5681 /* helloworld.pd */; };
 		8A77B3B311289B1100BFDB01 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B3B111289B1100BFDB01 /* mainViewController.m */; };
 		8A77B3B411289B1100BFDB01 /* mainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A77B3B211289B1100BFDB01 /* mainViewController.xib */; };
@@ -103,6 +104,8 @@
 		8A0FBB8C11166C0A00800872 /* iPdAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPdAdapter.m; sourceTree = "<group>"; };
 		8A4320B4110FDCDD00B66E5B /* metrobang.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = metrobang.pd; sourceTree = "<group>"; };
 		8A599A10111FB7080022BEF0 /* inouttest.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inouttest.pd; sourceTree = "<group>"; };
+		8A688C01113F52CB000B5DF4 /* AccelerometerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerometerFilter.h; sourceTree = "<group>"; };
+		8A688C02113F52CC000B5DF4 /* AccelerometerFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerometerFilter.m; sourceTree = "<group>"; };
 		8A6D364C110FC13500EA5681 /* helloworld.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helloworld.pd; sourceTree = "<group>"; };
 		8A77B3B011289B1100BFDB01 /* mainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainViewController.h; sourceTree = "<group>"; };
 		8A77B3B111289B1100BFDB01 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8A688C01113F52CB000B5DF4 /* AccelerometerFilter.h */,
+				8A688C02113F52CC000B5DF4 /* AccelerometerFilter.m */,
 				8A0FBB8B11166C0A00800872 /* iPdAdapter.h */,
 				8A0FBB8C11166C0A00800872 /* iPdAdapter.m */,
 				1D3623240D0F684500981E51 /* iPdTestMilestone1AppDelegate.h */,
@@ -476,6 +481,7 @@
 				8AA3BC7D1113A1640005A724 /* x_time.c in Sources */,
 				8A0FBB8D11166C0A00800872 /* iPdAdapter.m in Sources */,
 				8A77B3B311289B1100BFDB01 /* mainViewController.m in Sources */,
+				8A688C03113F52CC000B5DF4 /* AccelerometerFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -499,7 +499,7 @@ t_symbol *dogensym(const char *s, t_symbol *oldsym)
     {
         sym2 = (t_symbol *)t_getbytes(sizeof(*sym2));
         sym2->s_name = t_getbytes(length+1);
-        sym2->s_next = 0;
+		sym2->s_next = 0;
         sym2->s_thing = 0;
         strcpy(sym2->s_name, s);
     }
@@ -509,7 +509,7 @@ t_symbol *dogensym(const char *s, t_symbol *oldsym)
 
 t_symbol *gensym(const char *s)
 {
-    return(dogensym(s, 0));
+	return(dogensym(s, 0));
 }
 
 static t_symbol *addfileextent(t_symbol *s)

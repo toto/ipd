@@ -13,6 +13,7 @@
 
 #define MAX_INLETS 10		//02/25/2010 temporary...
 #define MAX_OUTLETS 10		//just to get everything working first
+#define MAX_ATOMS 20
 
 @interface iPdAdapter : NSObject {
 	//we should have an array of atoms that fills when the patch is read
@@ -26,6 +27,7 @@
 	//to test this, we'll just use a float for now
 	
 	t_canvas *root_canvas;
+	t_atom *atom_buffer[MAX_ATOMS];
 	void *inlet_list[MAX_INLETS];
 	void *outlet_list[MAX_OUTLETS];
 	int ninlets;

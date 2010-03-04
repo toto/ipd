@@ -21,12 +21,17 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0 / 60.0];
+	[[UIAccelerometer sharedAccelerometer] setDelegate:self];
+	
+	filter = [[HighpassFilter alloc] initWithSampleRate:60.0 cutoffFrequency:5.0];
+	trackAxis = NO;
     [super viewDidLoad];
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -50,6 +55,7 @@
 
 
 - (void)dealloc {
+	[filter release];
     [super dealloc];
 }
 
@@ -57,9 +63,14 @@
 #pragma mark Touch Handling				
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	//test
-	//NSLog(@"Test");
-	[[iPdAdapter sharediPdAdapter] sendBangToInlet:1];
+	UITouch *touch = [[event allTouches] anyObject];
+	CGPoint location = [touch locationInView:self.view];
+	
+	trackAxis = !trackAxis;
+	
+//	if (location.y > 240)
+//	[[iPdAdapter sharediPdAdapter] sendSymbol:@"symbol foo" toInlet:2];
+//	else [[iPdAdapter sharediPdAdapter] sendSymbol:@"symbol bar" toInlet:2];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -81,5 +92,23 @@
 	
 }
 
+#pragma mark Accelerometer Handling
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	if (motion == UIEventSubtypeMotionShake) {
+		trackAxis = !trackAxis;
+		[[iPdAdapter sharediPdAdapter] sendBangToInlet:0];
+	}
+}
+
+-(void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+{
+	// Update the accelerometer graph view
+	if(trackAxis)
+	{
+		[filter addAcceleration:acceleration];
+		[[iPdAdapter sharediPdAdapter] sendFloat:filter.x toInlet:1];
+	}
+}
 
 @end

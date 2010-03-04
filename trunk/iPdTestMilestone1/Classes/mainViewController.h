@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AccelerometerFilter.h"
 
-
-@interface mainViewController : UIViewController {
-
+@interface mainViewController : UIViewController <UIAccelerometerDelegate> {
+	BOOL trackAxis;
+	AccelerometerFilter *filter;
 }
 
 @end

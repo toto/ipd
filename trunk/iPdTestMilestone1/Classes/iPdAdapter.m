@@ -116,8 +116,8 @@ static iPdAdapter *sharediPdAdapterInstance = nil;
 		const char *file = [[[[NSBundle mainBundle] bundlePath] 
 							 stringByAppendingString:@"/inouttest.pd"] UTF8String];
 		printf("Attempting to open file: %s\n", file);
-		const char *argv[] = {path, "-nogui", "-nomidi", "-noaudio", file};
-		pd_main(5, argv, self);
+		const char *argv[] = {path, "-nogui", "-nomidi", "-noaudio", "-noprefs", file};
+		pd_main(6, argv, self);
 	}
 	
 	[pool drain];
@@ -154,10 +154,21 @@ static iPdAdapter *sharediPdAdapterInstance = nil;
 	int count = [list count];
 	char *argv[count -1];
 	
+	//03/04/2010 parse atom list.. most likely move to helper function later
+	//still not sure if theres an easier method provided by Pd itself...
+	
+	//try binbuf_text eventually...
+	
+	for (NSObject *obj in list)
+	{
+		
+	}
+	
+	
 	for (int i = 0; i < count -1; i++)
 		argv[i] = [list objectAtIndex:i+1];
 	pd_list(inlet_list[inlet], [list objectAtIndex:0], count-1, argv);
-												
+	
 }
 
 - (void)sendSymbol:(NSString *)sym toInlet:(int)inlet {
