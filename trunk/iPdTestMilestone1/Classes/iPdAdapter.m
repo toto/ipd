@@ -153,21 +153,34 @@ static iPdAdapter *sharediPdAdapterInstance = nil;
 	NSArray *list = [pdList componentsSeparatedByString:@" "];
 	int count = [list count];
 	char *argv[count -1];
-	
+
+
 	//03/04/2010 parse atom list.. most likely move to helper function later
-	//still not sure if theres an easier method provided by Pd itself...
+	Float32 aFloatAtom;
+	const char *aSymbolAtom;
 	
-	//try binbuf_text eventually...
-	
-	for (NSObject *obj in list)
+	NSScanner *scanner = [NSScanner scannerWithString:pdList];
+	for (NSString *item in list)
 	{
+			//03/05/2010 could make this more efficient...
+		//is there a for-in method with NSScanner?
+		if (isalpha([item UTF8String][0]) || ispunct([item UTF8String][0])) //if first char in string is alpha 
+		{
+			//printf("symbol: %s\n", [item UTF8String]);
+		}
+		else
+		{
+			//printf("float: %f\n", [item floatValue]);
+		}
+		
+	     
 		
 	}
 	
 	
 	for (int i = 0; i < count -1; i++)
 		argv[i] = [list objectAtIndex:i+1];
-	pd_list(inlet_list[inlet], [list objectAtIndex:0], count-1, argv);
+	//pd_list(inlet_list[inlet], [list objectAtIndex:0], count-1, argv);
 	
 }
 

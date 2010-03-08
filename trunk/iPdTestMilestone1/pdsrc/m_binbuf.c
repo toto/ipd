@@ -59,7 +59,7 @@ void binbuf_text(t_binbuf *x, char *text, size_t size)
     const char *textp = text, *etext = text+size;
     t_atom *ap;
     int nalloc = 16, natom = 0;
-    t_freebytes(x->b_vec, x->b_n * sizeof(*x->b_vec));
+	t_freebytes(x->b_vec, x->b_n * sizeof(*x->b_vec));
     x->b_vec = t_getbytes(nalloc * sizeof(*x->b_vec));
     ap = x->b_vec;
     x->b_n = 0;

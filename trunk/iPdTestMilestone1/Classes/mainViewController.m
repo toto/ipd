@@ -77,7 +77,10 @@
 	UITouch *touch = [[event allTouches] anyObject];
 	CGPoint location = [touch locationInView:self.view];
 	
-	[[iPdAdapter sharediPdAdapter] sendFloat:location.y toInlet:0];
+	//[[iPdAdapter sharediPdAdapter] sendFloat:location.y toInlet:0];
+	[[iPdAdapter sharediPdAdapter] sendList:
+	 [NSString stringWithFormat:
+	  @"x: %f y: %f", location.x, location.y] toInlet:1];
 	
 }
 
