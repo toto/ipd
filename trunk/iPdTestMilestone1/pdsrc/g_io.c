@@ -15,7 +15,9 @@ life elsewhere. */
 
 #include "m_pd.h"
 #include "g_canvas.h"
+#include "ipdinternals.h"
 #include <string.h>
+
 void signal_setborrowed(t_signal *sig, t_signal *sig2);
 void signal_makereusable(t_signal *sig);
 
@@ -338,8 +340,9 @@ static void *voutlet_new(t_symbol *s)
     x->x_parentoutlet = canvas_addoutlet(x->x_canvas, &x->x_obj.ob_pd, 0);
 	if (!x->x_canvas->gl_owner) 
 	{
-		printf("this is the root canvas\n");
-		objc_msgSend(ipd_ptr, sel_getUid("registerOutlet:"), x->x_parentoutlet);
+		t_ipdoutlet *ipdout = (t_ipdoutlet *)pd_new(ipdoutlet_class);
+		//printf("this is the root canvas\n");
+		//objc_msgSend(ipd_ptr, sel_getUid("registerOutlet:"), ipdout);
 	}
     inlet_new(&x->x_obj, &x->x_obj.ob_pd, 0, 0);
     x->x_bufsize = 0;

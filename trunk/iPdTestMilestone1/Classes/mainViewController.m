@@ -8,6 +8,7 @@
 
 #import "mainViewController.h"
 #import "iPdAdapter.h"
+#include <stdlib.h>
 
 @implementation mainViewController
 
@@ -29,6 +30,17 @@
 	
 	filter = [[HighpassFilter alloc] initWithSampleRate:60.0 cutoffFrequency:5.0];
 	trackAxis = NO;
+	bangcount = 0;
+	countLabel = [[UILabel alloc] initWithFrame:[self.view bounds]];
+	[countLabel setText:[NSString stringWithFormat:@"Bang count: %d", bangcount]];
+	[self.view addSubview:countLabel];
+	
+	//sounds :D
+	NSBundle *mainBundle = [NSBundle mainBundle];	
+	bassSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"bass" ofType:@"wav"]];
+	hatSound =  [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"hat" ofType:@"wav"]];
+	
+	
     [super viewDidLoad];
 }
 
@@ -56,6 +68,9 @@
 
 - (void)dealloc {
 	[filter release];
+	[countLabel release];
+	[bassSound release];
+	[hatSound release];
     [super dealloc];
 }
 
@@ -68,19 +83,15 @@
 	
 	trackAxis = !trackAxis;
 	
-//	if (location.y > 240)
-//	[[iPdAdapter sharediPdAdapter] sendSymbol:@"symbol foo" toInlet:2];
-//	else [[iPdAdapter sharediPdAdapter] sendSymbol:@"symbol bar" toInlet:2];
+
+	[[iPdAdapter sharediPdAdapter] sendBangToInlet:0];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [[event allTouches] anyObject];
 	CGPoint location = [touch locationInView:self.view];
 	
-	//[[iPdAdapter sharediPdAdapter] sendFloat:location.y toInlet:0];
-	[[iPdAdapter sharediPdAdapter] sendList:
-	 [NSString stringWithFormat:
-	  @"x: %f y: %f", location.x, location.y] toInlet:1];
+	[[iPdAdapter sharediPdAdapter] sendFloat:location.y toInlet:1];
 	
 }
 
@@ -100,6 +111,7 @@
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
 	if (motion == UIEventSubtypeMotionShake) {
 		trackAxis = !trackAxis;
+		NSLog(@"Got here");
 		[[iPdAdapter sharediPdAdapter] sendBangToInlet:0];
 	}
 }
@@ -110,8 +122,27 @@
 	if(trackAxis)
 	{
 		[filter addAcceleration:acceleration];
-		[[iPdAdapter sharediPdAdapter] sendFloat:filter.x toInlet:1];
+//		[[iPdAdapter sharediPdAdapter] sendFloat:filter.x toInlet:1];
 	}
+}
+
+-(void)bang {
+	NSLog(@"Sent a bang. Random: %f", (float) rand() / RAND_MAX);
+	bangcount++;
+	[countLabel setText:[NSString stringWithFormat:@"Bang count: %d", bangcount]];
+	[countLabel setBackgroundColor:[UIColor colorWithRed:((float)rand()/ RAND_MAX) 
+												  green:((float)rand() / RAND_MAX) 
+												   blue:((float)rand() / RAND_MAX)
+												  alpha:1.0]];
+	if ((float)rand() / RAND_MAX < 0.5)
+	{
+		[hatSound play];
+	}
+	else
+	{
+		[bassSound play];
+	}
+
 }
 
 @end

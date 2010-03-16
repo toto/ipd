@@ -9,6 +9,7 @@
 #include "m_pd.h"
 #include "m_imp.h"
 #include "g_canvas.h"
+#import "iPdTestMilestone1AppDelegate.h"
 #import <Foundation/Foundation.h>
 
 #define MAX_INLETS 10		//02/25/2010 temporary...
@@ -34,7 +35,10 @@
 	int noutlets;
 	float param;
 	NSThread *pdThread;
+	iPdTestMilestone1AppDelegate *appDelegate;
 }
+
+@property (nonatomic, assign) iPdTestMilestone1AppDelegate *appDelegate;
 
 + (iPdAdapter *)sharediPdAdapter;
 

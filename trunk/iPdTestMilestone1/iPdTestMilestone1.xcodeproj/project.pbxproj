@@ -15,12 +15,18 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		8A046348111E98F800A3BB1A /* inlet_test.pd in Resources */ = {isa = PBXBuildFile; fileRef = 8A046347111E98F800A3BB1A /* inlet_test.pd */; };
 		8A0FBB8D11166C0A00800872 /* iPdAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0FBB8C11166C0A00800872 /* iPdAdapter.m */; };
+		8A18C867114CABE900C97599 /* ipdinternals.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A18C866114CABE900C97599 /* ipdinternals.c */; };
 		8A4320B5110FDCDD00B66E5B /* metrobang.pd in Resources */ = {isa = PBXBuildFile; fileRef = 8A4320B4110FDCDD00B66E5B /* metrobang.pd */; };
 		8A599A11111FB7080022BEF0 /* inouttest.pd in Resources */ = {isa = PBXBuildFile; fileRef = 8A599A10111FB7080022BEF0 /* inouttest.pd */; };
+		8A650D75114D7EC900F8FD80 /* iPdSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A650D74114D7EC900F8FD80 /* iPdSelector.m */; };
 		8A688C03113F52CC000B5DF4 /* AccelerometerFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A688C02113F52CC000B5DF4 /* AccelerometerFilter.m */; };
 		8A6D364D110FC13500EA5681 /* helloworld.pd in Resources */ = {isa = PBXBuildFile; fileRef = 8A6D364C110FC13500EA5681 /* helloworld.pd */; };
 		8A77B3B311289B1100BFDB01 /* mainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A77B3B111289B1100BFDB01 /* mainViewController.m */; };
 		8A77B3B411289B1100BFDB01 /* mainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A77B3B211289B1100BFDB01 /* mainViewController.xib */; };
+		8A7979F6114DF68600C906CE /* bass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A7979F4114DF68600C906CE /* bass.wav */; };
+		8A7979F7114DF68600C906CE /* hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A7979F5114DF68600C906CE /* hat.wav */; };
+		8A797A2C114DF9DD00C906CE /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A797A2B114DF9DD00C906CE /* SoundEffect.m */; };
+		8A797A3F114DFACA00C906CE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A797A3E114DFACA00C906CE /* AudioToolbox.framework */; };
 		8AA2AB48111628C100F129F7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AA2AB47111628C100F129F7 /* Icon.png */; };
 		8AA3BBF61113A10D0005A724 /* d_arithmetic.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3BBF11113A10D0005A724 /* d_arithmetic.c */; };
 		8AA3BBF71113A10D0005A724 /* d_array.c in Sources */ = {isa = PBXBuildFile; fileRef = 8AA3BBF21113A10D0005A724 /* d_array.c */; };
@@ -102,14 +108,23 @@
 		8A046347111E98F800A3BB1A /* inlet_test.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inlet_test.pd; sourceTree = "<group>"; };
 		8A0FBB8B11166C0A00800872 /* iPdAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPdAdapter.h; sourceTree = "<group>"; };
 		8A0FBB8C11166C0A00800872 /* iPdAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPdAdapter.m; sourceTree = "<group>"; };
+		8A18C865114CABE900C97599 /* ipdinternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ipdinternals.h; sourceTree = "<group>"; };
+		8A18C866114CABE900C97599 /* ipdinternals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ipdinternals.c; sourceTree = "<group>"; };
 		8A4320B4110FDCDD00B66E5B /* metrobang.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = metrobang.pd; sourceTree = "<group>"; };
 		8A599A10111FB7080022BEF0 /* inouttest.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inouttest.pd; sourceTree = "<group>"; };
+		8A650D73114D7EC900F8FD80 /* iPdSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPdSelector.h; sourceTree = "<group>"; };
+		8A650D74114D7EC900F8FD80 /* iPdSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPdSelector.m; sourceTree = "<group>"; };
 		8A688C01113F52CB000B5DF4 /* AccelerometerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerometerFilter.h; sourceTree = "<group>"; };
 		8A688C02113F52CC000B5DF4 /* AccelerometerFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerometerFilter.m; sourceTree = "<group>"; };
 		8A6D364C110FC13500EA5681 /* helloworld.pd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helloworld.pd; sourceTree = "<group>"; };
 		8A77B3B011289B1100BFDB01 /* mainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mainViewController.h; sourceTree = "<group>"; };
 		8A77B3B111289B1100BFDB01 /* mainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mainViewController.m; sourceTree = "<group>"; };
 		8A77B3B211289B1100BFDB01 /* mainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = mainViewController.xib; path = Classes/mainViewController.xib; sourceTree = "<group>"; };
+		8A7979F4114DF68600C906CE /* bass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bass.wav; sourceTree = "<group>"; };
+		8A7979F5114DF68600C906CE /* hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hat.wav; sourceTree = "<group>"; };
+		8A797A2A114DF9DD00C906CE /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		8A797A2B114DF9DD00C906CE /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
+		8A797A3E114DFACA00C906CE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8AA2AB47111628C100F129F7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8AA3BBF11113A10D0005A724 /* d_arithmetic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = d_arithmetic.c; path = pdsrc/d_arithmetic.c; sourceTree = "<group>"; };
 		8AA3BBF21113A10D0005A724 /* d_array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = d_array.c; path = pdsrc/d_array.c; sourceTree = "<group>"; };
@@ -192,6 +207,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				8A797A3F114DFACA00C906CE /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +217,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8A797A27114DF94600C906CE /* Temp Sound */,
+				8A650D72114D7EB200F8FD80 /* Selectors */,
 				8A688C01113F52CB000B5DF4 /* AccelerometerFilter.h */,
 				8A688C02113F52CC000B5DF4 /* AccelerometerFilter.m */,
 				8A0FBB8B11166C0A00800872 /* iPdAdapter.h */,
@@ -209,6 +227,8 @@
 				1D3623250D0F684500981E51 /* iPdTestMilestone1AppDelegate.m */,
 				8A77B3B011289B1100BFDB01 /* mainViewController.h */,
 				8A77B3B111289B1100BFDB01 /* mainViewController.m */,
+				8A18C865114CABE900C97599 /* ipdinternals.h */,
+				8A18C866114CABE900C97599 /* ipdinternals.c */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -247,6 +267,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8A7979F4114DF68600C906CE /* bass.wav */,
+				8A7979F5114DF68600C906CE /* hat.wav */,
 				8A77B3B211289B1100BFDB01 /* mainViewController.xib */,
 				8A599A10111FB7080022BEF0 /* inouttest.pd */,
 				8A046347111E98F800A3BB1A /* inlet_test.pd */,
@@ -265,6 +287,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				8A797A3E114DFACA00C906CE /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -346,6 +369,24 @@
 			name = Pd;
 			sourceTree = "<group>";
 		};
+		8A650D72114D7EB200F8FD80 /* Selectors */ = {
+			isa = PBXGroup;
+			children = (
+				8A650D73114D7EC900F8FD80 /* iPdSelector.h */,
+				8A650D74114D7EC900F8FD80 /* iPdSelector.m */,
+			);
+			name = Selectors;
+			sourceTree = "<group>";
+		};
+		8A797A27114DF94600C906CE /* Temp Sound */ = {
+			isa = PBXGroup;
+			children = (
+				8A797A2A114DF9DD00C906CE /* SoundEffect.h */,
+				8A797A2B114DF9DD00C906CE /* SoundEffect.m */,
+			);
+			name = "Temp Sound";
+			sourceTree = "<group>";
+		};
 		AFB9C7B311332E6100F1555B /* iPdUtilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +443,8 @@
 				8A046348111E98F800A3BB1A /* inlet_test.pd in Resources */,
 				8A599A11111FB7080022BEF0 /* inouttest.pd in Resources */,
 				8A77B3B411289B1100BFDB01 /* mainViewController.xib in Resources */,
+				8A7979F6114DF68600C906CE /* bass.wav in Resources */,
+				8A7979F7114DF68600C906CE /* hat.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +525,9 @@
 				8A0FBB8D11166C0A00800872 /* iPdAdapter.m in Sources */,
 				8A77B3B311289B1100BFDB01 /* mainViewController.m in Sources */,
 				8A688C03113F52CC000B5DF4 /* AccelerometerFilter.m in Sources */,
+				8A18C867114CABE900C97599 /* ipdinternals.c in Sources */,
+				8A650D75114D7EC900F8FD80 /* iPdSelector.m in Sources */,
+				8A797A2C114DF9DD00C906CE /* SoundEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,6 +26,7 @@ int pd_main();			//cool
 //    const char *argv[] = {path, "-nogui", "-nomidi", "-noaudio", file};
 //	pd_main(5, argv);			//start up pd lol
     // Override point for customization after application launch
+	[[iPdAdapter sharediPdAdapter] setAppDelegate:self];
 	[[iPdAdapter sharediPdAdapter] start_pdthread];
 	mainViewController *tempViewController = [[mainViewController alloc] init];
 	self.viewController = tempViewController;

@@ -1502,6 +1502,7 @@ static void value_setup(void)
         sizeof(t_vcommon), CLASS_PD, 0);
 }
 
+
 /* -------------- overall setup routine for this file ----------------- */
 
 void x_connective_setup(void)			//put extra internals here!!!

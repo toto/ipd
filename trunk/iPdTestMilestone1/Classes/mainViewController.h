@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "AccelerometerFilter.h"
+#import "SoundEffect.h"
+
+
 
 @interface mainViewController : UIViewController <UIAccelerometerDelegate> {
 	BOOL trackAxis;
 	AccelerometerFilter *filter;
+	int bangcount;
+	UILabel *countLabel;
+	SoundEffect *bassSound;
+	SoundEffect *hatSound;
 }
+
+-(void)bang;
 
 @end

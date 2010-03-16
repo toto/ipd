@@ -26,7 +26,6 @@
 
 #import "iPdAdapter.h"
 
-
 @interface iPdAdapter(private)
 //pd thread controlled by this class only
 - (void)callPdMain; //selector method
@@ -38,6 +37,8 @@
 int pd_main();
 
 @implementation iPdAdapter
+
+@synthesize appDelegate;
 
 static iPdAdapter *sharediPdAdapterInstance = nil;
 
@@ -149,45 +150,58 @@ static iPdAdapter *sharediPdAdapterInstance = nil;
 	pd_bang(inlet_list[inlet]);
 }
 
+
+/*03/12/2010
+ so far this method causes this to be output:
+ print: 135consistency check failed: atom_string
+ 135consistency check failed: atom_string
+ 135
+ 
+ 
+ */
 - (void)sendList:(NSString *)pdList toInlet:(int)inlet {
 	NSArray *list = [pdList componentsSeparatedByString:@" "];
-	int count = [list count];
-	char *argv[count -1];
+	char *argv[[list count]];
 
 
 	//03/04/2010 parse atom list.. most likely move to helper function later
-	Float32 aFloatAtom;
-	const char *aSymbolAtom;
+	NSString *atom = [[NSString alloc] init];
 	
-	NSScanner *scanner = [NSScanner scannerWithString:pdList];
-	for (NSString *item in list)
+	for (int i = 0; i < [list count]; i++)
 	{
+		atom = [list objectAtIndex:i];
 			//03/05/2010 could make this more efficient...
 		//is there a for-in method with NSScanner?
-		if (isalpha([item UTF8String][0]) || ispunct([item UTF8String][0])) //if first char in string is alpha 
+		//03/12/2010, only floats and symbols available so far
+		t_atom *theatom = getbytes(sizeof(t_atom));
+		if (isalpha([atom UTF8String][0]) || 
+			ispunct([atom UTF8String][0])) //if first char in string is alpha 
 		{
-			//printf("symbol: %s\n", [item UTF8String]);
+			printf("OPTION 1 *********** symbol: %s\n", [atom UTF8String]);
+			theatom->a_type = A_SYMBOL;
+			theatom->a_w.w_symbol = gensym([atom UTF8String]);
 		}
 		else
 		{
-			//printf("float: %f\n", [item floatValue]);
+			printf("OPTION 2 )))))))))))) float: %f\n", [atom floatValue]);
+			theatom->a_type = A_FLOAT;
+			theatom->a_w.w_float = [atom floatValue];
 		}
-		
-	     
-		
+		atom_buffer[i] = theatom;
 	}
 	
+	pd_list(inlet_list[inlet], 
+			gensym("list"), 
+			[list count], 
+			*atom_buffer);
 	
-	for (int i = 0; i < count -1; i++)
-		argv[i] = [list objectAtIndex:i+1];
-	//pd_list(inlet_list[inlet], [list objectAtIndex:0], count-1, argv);
-	
+	//[atom release];
 }
 
 - (void)sendSymbol:(NSString *)sym toInlet:(int)inlet {
 	NSLog(@"Sending message: %@", sym);
 	const char *symbol = [sym UTF8String];
-	pd_symbol(inlet_list[inlet], symbol);
+	pd_symbol(inlet_list[inlet], gensym(symbol));
 }
 
 /* 02/24/2010 -been stuck for a while on accessing the "next" pointer of dthe inlet linked 
@@ -205,6 +219,11 @@ static iPdAdapter *sharediPdAdapterInstance = nil;
 - (void)registerOutlet:(void *)ptr {
 	outlet_list[noutlets] = ptr;
 	noutlets++;
+}
+
+- (void)bangOut{
+	[appDelegate.viewController performSelectorOnMainThread:@selector(bang)
+												 withObject:nil waitUntilDone:NO];
 }
 
 @end
